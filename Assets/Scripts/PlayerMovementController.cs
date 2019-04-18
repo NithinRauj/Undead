@@ -24,9 +24,32 @@ void Update()
 
 void MovePlayer()
 {
-    moveDirection=new Vector3(Input.GetAxis(Axis.HORIZONTAL),0,Input.GetAxis(Axis.VERTICAL));
+    moveDirection=new Vector3(Input.GetAxis(Axis.HORIZONTAL),0f,Input.GetAxis(Axis.VERTICAL));
     moveDirection=transform.TransformDirection(moveDirection);
     moveDirection*=speed*Time.deltaTime;
+    ApplyGravity();
     characterController.Move(moveDirection);
+}
+
+void ApplyGravity()
+{
+    if(characterController.isGrounded)
+    {
+        verticalVelocity-=gravity*Time.deltaTime;
+        PlayerJump();
+    }
+    else
+    {
+        verticalVelocity-=gravity*Time.deltaTime;
+    }
+    moveDirection.y=verticalVelocity*Time.deltaTime;
+}
+
+void PlayerJump()
+{
+    if(characterController.isGrounded && Input.GetKeyDown(KeyCode.Space))
+    {
+        verticalVelocity=jumpForce;
+    }
 }
 }
