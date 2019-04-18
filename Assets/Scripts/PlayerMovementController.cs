@@ -24,7 +24,7 @@ void Update()
 
 void MovePlayer()
 {
-    moveDirection=new Vector3(Input.GetAxis(Axis.HORIZONTAL),0f,Input.GetAxis(Axis.VERTICAL));
+    moveDirection=new Vector3(Input.GetAxis("Horizontal"),0f,Input.GetAxis("Vertical"));
     moveDirection=transform.TransformDirection(moveDirection);
     moveDirection*=speed*Time.deltaTime;
     ApplyGravity();
