@@ -24,9 +24,10 @@ void Update()
 
 void MovePlayer()
 {
-    moveDirection=new Vector3(Input.GetAxis("Horizontal"),0f,Input.GetAxis("Vertical"));
+    moveDirection=new Vector3(Input.GetAxis(Axis.HORIZONTAL),0f,Input.GetAxis(Axis.VERTICAL));
+    //transforms local space to world space coordinates
     moveDirection=transform.TransformDirection(moveDirection);
-    moveDirection*=speed*Time.deltaTime;
+    moveDirection*=speed*Time.deltaTime; 
     ApplyGravity();
     characterController.Move(moveDirection);
 }

@@ -53,7 +53,7 @@ void CursorLockAndUnlock()
 
 void LookAround()
 {
-    current_Mouse_Look=new Vector2(Input.GetAxisRaw("Mouse Y"),Input.GetAxisRaw("Mouse X"));
+    current_Mouse_Look=new Vector2(Input.GetAxisRaw(MouseAxis.MOUSEY),Input.GetAxisRaw(MouseAxis.MOUSEX));
     look_Angles.x+=current_Mouse_Look.x*sensitivity*(invert ? 1f:-1f);
     look_Angles.y+=current_Mouse_Look.y*sensitivity;
     look_Angles.x=Mathf.Clamp(look_Angles.x,default_Look_Limits.x,default_Look_Limits.y);
