@@ -113,6 +113,26 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &438546962 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1979150866765492, guid: 34e35caf51917cb4f8473433246766e1,
+    type: 2}
+  m_PrefabInternal: {fileID: 747507262}
+--- !u!114 &438546963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 438546962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef806e95e2fe1404ab1afb02d8fe045b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapons:
+  - {fileID: 1193115966}
+  - {fileID: 2049857356}
+  - {fileID: 1810204084}
 --- !u!1001 &572562256
 Prefab:
   m_ObjectHideFlags: 0
@@ -294,3 +314,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 53.6, y: -30, z: 0}
+--- !u!114 &1193115966 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114309605045832370, guid: 34e35caf51917cb4f8473433246766e1,
+    type: 2}
+  m_PrefabInternal: {fileID: 747507262}
+  m_Script: {fileID: 11500000, guid: cf9b81914a6efc541960c65faa60e9a5, type: 3}
+--- !u!114 &1810204084 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114273586071309648, guid: 34e35caf51917cb4f8473433246766e1,
+    type: 2}
+  m_PrefabInternal: {fileID: 747507262}
+  m_Script: {fileID: 11500000, guid: cf9b81914a6efc541960c65faa60e9a5, type: 3}
+--- !u!114 &2049857356 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114813225114867352, guid: 34e35caf51917cb4f8473433246766e1,
+    type: 2}
+  m_PrefabInternal: {fileID: 747507262}
+  m_Script: {fileID: 11500000, guid: cf9b81914a6efc541960c65faa60e9a5, type: 3}
