@@ -26,10 +26,10 @@ public class WeaponHandler : MonoBehaviour {
         anim.SetTrigger(AnimationTags.ATTACK_PARAMETER);
     }
 
-    public void Aim(bool canAim)
-    {
-        anim.SetBool(AnimationTags.AIM_TRIGGER,canAim);
-    }
+    // public void Aim(bool canAim)
+    // {
+    //     anim.SetBool(AnimationTags.AIM_TRIGGER,canAim);
+    // }
 
     public void PlayFiringSound()
     {

@@ -42,6 +42,7 @@ void TurnOnSelectedWeapon(int weapon_Index)
     current_Weapon_Index=weapon_Index;
 }
 
+//to refer current weapon methods and fields in this script and other scripts
 public WeaponHandler ReturnCurrentWeapon()
 {
     return weapons[current_Weapon_Index];

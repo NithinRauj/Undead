@@ -8,15 +8,22 @@ public class PlayerAttack : MonoBehaviour {
     private float rateOfFire=15f;
     private float nextTimeToFire;
     private float damage=20f;
+    private GameObject crosshair;
+    [SerializeField]
+    private Animator FPCamera_Anim;
 
-    void Start()
+    void Awake()
     {
         weapon_Manager=GetComponent<WeaponManager>();
+        crosshair=GameObject.FindGameObjectWithTag(Tags.CROSSHAIR);
+        // FPCamera_Anim=transform.Find(Tags.LOOK_ROOT).
+        //    transform.Find(Tags.ZOOM_CAMERA).GetComponent<Animator>();
     }
 
     void Update()
     {
         PlayerShoot();
+        SteadyAim();
     }
 
     void PlayerShoot()
@@ -50,4 +57,38 @@ public class PlayerAttack : MonoBehaviour {
             }
         }
     }
+
+    void SteadyAim()
+    {
+        //If weapon supports steady aim play steady aim animation whe RMB is held
+        if(Input.GetMouseButtonDown(1) && weapon_Manager.ReturnCurrentWeapon().aim_Type==WeaponAim.AIM )
+        {
+            crosshair.SetActive(false);
+            FPCamera_Anim.Play(AnimationTags.STEADYAIM_IN);
+        }
+
+        //get out of steady aim when RMB is released
+        if(Input.GetMouseButtonUp(1))
+        {
+            FPCamera_Anim.Play(AnimationTags.STEADYAIM_OUT);
+            crosshair.SetActive(true);
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

@@ -17,8 +17,8 @@ public class MouseAxis:MonoBehaviour
 
 public class AnimationTags : MonoBehaviour
 {
-    public const string ZOOM_IN="ZoomIn";
-    public const string ZOOM_OUT="ZoomOut";
+    public const string STEADYAIM_IN="SteadyAimIn";
+    public const string STEADYAIM_OUT="SteadyAimOut";
     public const string ATTACK_PARAMETER="Attack";
     public const string AIM_TRIGGER="Aim";
     public const string ATTACK_TRIGGER="Attack";

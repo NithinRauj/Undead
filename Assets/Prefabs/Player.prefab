@@ -313,7 +313,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1167472472705042
 GameObject:
   m_ObjectHideFlags: 1
@@ -1669,9 +1669,10 @@ GameObject:
   - component: {fileID: 4153606056860406}
   - component: {fileID: 20726953387730016}
   - component: {fileID: 124242349467793122}
+  - component: {fileID: 95897248605042932}
   m_Layer: 0
   m_Name: FP Camera
-  m_TagString: Untagged
+  m_TagString: FP Camera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2097,7 +2098,7 @@ GameObject:
   - component: {fileID: 114904690438573782}
   m_Layer: 0
   m_Name: LookRoot
-  m_TagString: Untagged
+  m_TagString: Look Root
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2385,7 +2386,7 @@ GameObject:
   - component: {fileID: 114273586071309648}
   m_Layer: 8
   m_Name: 3-Axe
-  m_TagString: Untagged
+  m_TagString: Axe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2402,6 +2403,7 @@ GameObject:
   - component: {fileID: 114183090166856908}
   - component: {fileID: 114089512553378196}
   - component: {fileID: 114723866058700434}
+  - component: {fileID: 114628298661181852}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -5266,6 +5268,23 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!95 &95897248605042932
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1670317278287536}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d8ddb220efd18ca49b69fdc5ecd86877, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114089512553378196
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5348,6 +5367,18 @@ MonoBehaviour:
   vol_Min: 0
   vol_Max: 0
   step_Distance: 0
+--- !u!114 &114628298661181852
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1979150866765492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e53d6410163e4439a4ec94741839fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FPCamera_Anim: {fileID: 95897248605042932}
 --- !u!114 &114723866058700434
 MonoBehaviour:
   m_ObjectHideFlags: 1
