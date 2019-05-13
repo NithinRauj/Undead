@@ -7,6 +7,7 @@ public class PlayerAttack : MonoBehaviour {
 	private WeaponManager weapon_Manager;
     private float rateOfFire=15f;
     private float nextTimeToFire;
+    public float range=20f;
     private float damage=20f;
     private GameObject crosshair;
     [SerializeField]
@@ -35,6 +36,7 @@ public class PlayerAttack : MonoBehaviour {
             {
                  nextTimeToFire=Time.time+1/rateOfFire;
                  weapon_Manager.ReturnCurrentWeapon().TriggerAttackAnimation();
+                  BulletFired();
             }
         }
 
@@ -48,11 +50,11 @@ public class PlayerAttack : MonoBehaviour {
                 {
                     weapon_Manager.ReturnCurrentWeapon().TriggerAttackAnimation();
                 }
-                
+                //if current weapon is shotgun
                 else
                 {
                     weapon_Manager.ReturnCurrentWeapon().TriggerAttackAnimation();
-                    //BulletFired();
+                    BulletFired();
                 }
             }
         }
@@ -73,9 +75,18 @@ public class PlayerAttack : MonoBehaviour {
             FPCamera_Anim.Play(AnimationTags.STEADYAIM_OUT);
             crosshair.SetActive(true);
         }
+
+
     }
 
-
+     void BulletFired()
+        {   
+            RaycastHit hit;
+            if(Physics.Raycast(Camera.main.transform.position,Camera.main.transform.forward,out hit))
+            {
+                Debug.Log("Bullet hit "+hit.transform.gameObject.name);
+            }
+        }
 
 
 

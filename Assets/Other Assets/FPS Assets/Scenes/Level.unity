@@ -329,6 +329,11 @@ Prefab:
       propertyPath: FPCamera_Anim
       value: 
       objectReference: {fileID: 1042845493}
+    - target: {fileID: 114628298661181852, guid: 34e35caf51917cb4f8473433246766e1,
+        type: 2}
+      propertyPath: range
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 34e35caf51917cb4f8473433246766e1, type: 2}
   m_IsPrefabParent: 0
