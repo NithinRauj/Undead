@@ -313,7 +313,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1167472472705042
 GameObject:
   m_ObjectHideFlags: 1
@@ -5378,6 +5378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5e53d6410163e4439a4ec94741839fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  range: 30
   FPCamera_Anim: {fileID: 95897248605042932}
 --- !u!114 &114723866058700434
 MonoBehaviour:
