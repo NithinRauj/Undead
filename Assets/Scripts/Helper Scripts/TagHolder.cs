@@ -25,6 +25,7 @@ public class AnimationTags : MonoBehaviour
     public const string WALK_TRIGGER="Walk";
     public const string RUN_TRIGGER="Run";
     public const string DEAD_TRIGGER="Dead"; 
+    public const string HIT_TRIGGER="Hit";
 }
 
 public class Tags:MonoBehaviour

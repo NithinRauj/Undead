@@ -3,16 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public enum zombie_State    {IDLE,CHASE,ATTACK,DEAD};
 public class ZombieAIController : MonoBehaviour {
 
 private NavMeshAgent agent;
 [SerializeField]
 private Transform player;
 private Animator anim;
-private float visible_Angle=60f;
 private float visible_Distance=30f;
-private zombie_State zombie_State;
+private float destroy_After=3f;
 
 void Awake()
 {
@@ -20,10 +18,6 @@ void Awake()
     anim=GetComponent<Animator>();
 }
 
-void Start()
-{
-    zombie_State=zombie_State.IDLE;
-}
 
 void Update()
 {
@@ -34,8 +28,9 @@ void LocateAndChasePlayer()
 {
     Vector3 directionToPlayer=player.position-transform.position;
     float angle=Vector3.Angle(transform.forward,directionToPlayer);
-    if(directionToPlayer.magnitude<visible_Distance && angle<visible_Angle)
+    if(directionToPlayer.magnitude<visible_Distance)
     {
+        anim.SetBool(AnimationTags.WALK_TRIGGER,true);
         agent.isStopped=false;
         agent.SetDestination(player.position);
         if(directionToPlayer.magnitude<agent.stoppingDistance)
@@ -45,13 +40,27 @@ void LocateAndChasePlayer()
     }
     else
     {
+        anim.SetBool(AnimationTags.WALK_TRIGGER,false);
         agent.isStopped=true;
     }
 }
 
 void AttackPlayer()
 {
-    anim.SetBool(AnimationTags.ATTACK_TRIGGER,true);
+    anim.SetTrigger(AnimationTags.ATTACK_TRIGGER);
+}
+
+void ZombieHit()
+{
+    anim.SetTrigger(AnimationTags.HIT_TRIGGER);
+    //insert code for reducing zombie's health here
+    //if health <=0 
+    //ZombieDead();
+}
+void ZombieDead()
+{
+    anim.SetTrigger(AnimationTags.DEAD_TRIGGER);
+    Destroy(gameObject,destroy_After);
 }
 
 
