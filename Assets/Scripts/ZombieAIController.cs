@@ -11,6 +11,7 @@ private Transform player;
 private Animator anim;
 private float visible_Distance=30f;
 private float destroy_After=3f;
+public GameObject attack_Point;
 
 void Awake()
 {
@@ -64,13 +65,15 @@ void ZombieDead()
 }
 
 
-
-
-
-
-
-
-
+public void TurnOnAttackPoint()
+    {
+        attack_Point.SetActive(true);
+    }
+	public void TurnOffAttackPoint()
+    {
+        if(attack_Point.activeInHierarchy)
+            attack_Point.SetActive(false);
+    }
 
 
 

@@ -14,7 +14,7 @@ public class WeaponHandler : MonoBehaviour {
     public WeaponBulletType bullet_Type;
     [SerializeField]
     private GameObject muzzle_Flash;
-    private GameObject attack_Point;
+    public GameObject attack_Point;
 
     void Awake()
     {
@@ -25,11 +25,6 @@ public class WeaponHandler : MonoBehaviour {
     {
         anim.SetTrigger(AnimationTags.ATTACK_PARAMETER);
     }
-
-    // public void Aim(bool canAim)
-    // {
-    //     anim.SetBool(AnimationTags.AIM_TRIGGER,canAim);
-    // }
 
     public void PlayFiringSound()
     {
