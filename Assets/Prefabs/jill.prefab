@@ -682,9 +682,10 @@ GameObject:
   - component: {fileID: 4195276491246272}
   - component: {fileID: 95540586304099742}
   - component: {fileID: 64511742408847070}
+  - component: {fileID: 54495033765427200}
+  - component: {fileID: 65537813692960290}
   - component: {fileID: 195753626623848216}
   - component: {fileID: 114642140716937596}
-  - component: {fileID: 23246677697117532}
   m_Layer: 0
   m_Name: jill
   m_TagString: Untagged
@@ -2171,7 +2172,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1372230925489390}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 425.6, y: 201.28, z: 285.4}
+  m_LocalPosition: {x: 425.6, y: 200.11, z: 285.4}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4898777034465868}
@@ -3594,40 +3595,21 @@ Transform:
   m_Father: {fileID: 4773387947512566}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23246677697117532
-MeshRenderer:
+--- !u!54 &54495033765427200
+Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1372230925489390}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!64 &64511742408847070
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -3638,10 +3620,22 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 0}
+--- !u!65 &65537813692960290
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1372230925489390}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.39515686, y: 1.1447439, z: 0.29145813}
+  m_Center: {x: 0.017051697, y: 1.032372, z: 0.06819916}
 --- !u!95 &95540586304099742
 Animator:
   serializedVersion: 3
@@ -3651,7 +3645,7 @@ Animator:
   m_GameObject: {fileID: 1372230925489390}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: f26695eaf46566b40bd4ee988762f4e1, type: 3}
-  m_Controller: {fileID: 9100000, guid: e10558744504b244599302a4ca2e3be3, type: 2}
+  m_Controller: {fileID: 9100000, guid: 248626fdedf927c4f9424f33b70f7414, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -4260,16 +4254,16 @@ NavMeshAgent:
   m_GameObject: {fileID: 1372230925489390}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 2.5
+  m_Radius: 0.17
+  m_Speed: 1.5
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 800
   m_StoppingDistance: 3
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2
+  m_Height: 1.84
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
