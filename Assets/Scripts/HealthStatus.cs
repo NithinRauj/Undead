@@ -9,7 +9,8 @@ private float destroy_After=3f;
 public float invoke_After=3f;
 public bool is_Player;
 public bool is_Zombie;
-private bool is_Dead;
+[HideInInspector]
+public bool is_Dead;
 private Animator enemy_Anim;
 private Rigidbody rb;
 private NavMeshAgent nav_Mesh_Agent;
@@ -58,9 +59,7 @@ void CharacterDead()
     if(tag==Tags.ENEMY_TAG)
     {
         enemy_Anim.SetTrigger(AnimationTags.DEAD_TRIGGER);
-        //enemy_Anim.enabled=false;
-        nav_Mesh_Agent.isStopped=true;
-        nav_Mesh_Agent.enabled=false;
+        Destroy(nav_Mesh_Agent);
         //below two lines are to disable rigidbody 
         rb.isKinematic=true;
         rb.detectCollisions=false;

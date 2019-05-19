@@ -85,7 +85,10 @@ public class PlayerAttack : MonoBehaviour {
             if(Physics.Raycast(Camera.main.transform.position,Camera.main.transform.forward,out hit))
             {
                 Debug.Log("Bullet hit "+hit.transform.gameObject.name);
-                hit.transform.gameObject.GetComponent<HealthStatus>().ApplyDamage(damage);
+                if(hit.transform.gameObject.tag==Tags.ENEMY_TAG)
+                {
+                    hit.transform.gameObject.GetComponent<HealthStatus>().ApplyDamage(damage);
+                }
             }
         }
 
