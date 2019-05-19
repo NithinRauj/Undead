@@ -8,7 +8,7 @@ public class PlayerAttack : MonoBehaviour {
     private float rateOfFire=15f;
     private float nextTimeToFire;
     public float range=20f;
-    private float damage=20f;
+    public float damage=20f;
     private GameObject crosshair;
     [SerializeField]
     private Animator FPCamera_Anim;
@@ -85,6 +85,7 @@ public class PlayerAttack : MonoBehaviour {
             if(Physics.Raycast(Camera.main.transform.position,Camera.main.transform.forward,out hit))
             {
                 Debug.Log("Bullet hit "+hit.transform.gameObject.name);
+                hit.transform.gameObject.GetComponent<HealthStatus>().ApplyDamage(damage);
             }
         }
 

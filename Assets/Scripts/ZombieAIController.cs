@@ -51,18 +51,18 @@ void AttackPlayer()
     anim.SetTrigger(AnimationTags.ATTACK_TRIGGER);
 }
 
-void ZombieHit()
-{
-    anim.SetTrigger(AnimationTags.HIT_TRIGGER);
-    //insert code for reducing zombie's health here
-    //if health <=0 
-    //ZombieDead();
-}
-void ZombieDead()
-{
-    anim.SetTrigger(AnimationTags.DEAD_TRIGGER);
-    Destroy(gameObject,destroy_After);
-}
+// void ZombieHit()
+// {
+//     anim.SetTrigger(AnimationTags.HIT_TRIGGER);
+//     //insert code for reducing zombie's health here
+//     //if health <=0 
+//     //ZombieDead();
+// }
+// void ZombieDead()
+// {
+//     anim.SetTrigger(AnimationTags.DEAD_TRIGGER);
+//     Destroy(gameObject,destroy_After);
+// }
 
 
 public void TurnOnAttackPoint()

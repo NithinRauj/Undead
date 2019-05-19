@@ -113,6 +113,26 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: adb578959dd23d8499bd0349bfe1ad58, type: 2}
+--- !u!1 &170561054 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1372230925489390, guid: bf0b3535edf926141abc27514f01700b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1604857164}
+--- !u!114 &170561055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 170561054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4889fd73ec6b9c141bf05fc39d1102fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  invoke_After: 3
+  is_Player: 0
+  is_Zombie: 1
 --- !u!4 &224136021 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4545844385179666, guid: 34e35caf51917cb4f8473433246766e1,
@@ -365,6 +385,24 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114628298661181852, guid: 34e35caf51917cb4f8473433246766e1,
+        type: 2}
+      propertyPath: damage
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114356626072275014, guid: 34e35caf51917cb4f8473433246766e1,
+        type: 2}
+      propertyPath: damage
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1976312112978080, guid: 34e35caf51917cb4f8473433246766e1, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1139475613507810, guid: 34e35caf51917cb4f8473433246766e1, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 34e35caf51917cb4f8473433246766e1, type: 2}
   m_IsPrefabParent: 0
@@ -495,6 +533,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1530358507 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1979150866765492, guid: 34e35caf51917cb4f8473433246766e1,
+    type: 2}
+  m_PrefabInternal: {fileID: 747507262}
+--- !u!114 &1530358508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1530358507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4889fd73ec6b9c141bf05fc39d1102fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  invoke_After: 3
+  is_Player: 1
+  is_Zombie: 0
 --- !u!1001 &1604857164
 Prefab:
   m_ObjectHideFlags: 0
@@ -539,6 +597,11 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 224136021}
+    - target: {fileID: 114252404297489446, guid: bf0b3535edf926141abc27514f01700b,
+        type: 2}
+      propertyPath: damage
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bf0b3535edf926141abc27514f01700b, type: 2}
   m_IsPrefabParent: 0
