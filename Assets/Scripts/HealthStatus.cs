@@ -71,6 +71,8 @@ void CharacterDead()
     {
         GetComponent<CharacterController>().enabled=false;
         GetComponent<PlayerMovementController>().enabled=false;
+        GetComponent<PlayerAttack>().enabled=false;
+        GetComponent<WeaponManager>().ReturnCurrentWeapon().gameObject.SetActive(false);
         Invoke("ResetGame",invoke_After);
     }
 }

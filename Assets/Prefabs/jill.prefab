@@ -3713,6 +3713,7 @@ MonoBehaviour:
   invoke_After: 3
   is_Player: 0
   is_Zombie: 1
+  is_Dead: 0
 --- !u!114 &114642140716937596
 MonoBehaviour:
   m_ObjectHideFlags: 1
