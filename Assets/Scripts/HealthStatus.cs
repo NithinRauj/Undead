@@ -17,6 +17,7 @@ private Rigidbody rb;
 private GameObject crosshair;
 private NavMeshAgent nav_Mesh_Agent;
 private EnemyAudioManager enemy_Audio;
+private PlayerStats player_Stats;
 	
 void Awake()
 {
@@ -25,6 +26,10 @@ void Awake()
         enemy_Anim=GetComponent<Animator>();
         nav_Mesh_Agent=GetComponent<NavMeshAgent>();
         enemy_Audio=GetComponent<EnemyAudioManager>();
+    }
+    if(is_Player)
+    {
+        player_Stats=GetComponent<PlayerStats>();
     }
     rb=GetComponent<Rigidbody>();
 }
@@ -48,7 +53,7 @@ public void ApplyDamage(float damage)
 
     if(is_Player)
     {
-        //player health and stats UI is updated here
+        player_Stats.UpdateHealthStats(health);   
     }
 
     if(health<=0f)

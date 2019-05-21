@@ -3821,7 +3821,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 1
-  damage: 30
+  damage: 15
   layer_Mask:
     serializedVersion: 2
     m_Bits: 1024
