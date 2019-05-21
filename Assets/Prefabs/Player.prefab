@@ -5420,10 +5420,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  invoke_After: 3
   is_Player: 1
   is_Zombie: 0
   is_Dead: 0
+  crosshair: {fileID: 0}
 --- !u!114 &114273586071309648
 MonoBehaviour:
   m_ObjectHideFlags: 1

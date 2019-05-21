@@ -6,14 +6,17 @@ using UnityEngine.AI;
 public class HealthStatus : MonoBehaviour {
 public float health=100f;
 private float destroy_After=3f;
-public float invoke_After=3f;
+private float invoke_After=3f;
 public bool is_Player;
 public bool is_Zombie;
 [HideInInspector]
 public bool is_Dead;
 private Animator enemy_Anim;
 private Rigidbody rb;
+[SerializeField]
+private GameObject crosshair;
 private NavMeshAgent nav_Mesh_Agent;
+private EnemyAudioManager enemy_Audio;
 	
 void Awake()
 {
@@ -21,6 +24,7 @@ void Awake()
     {
         enemy_Anim=GetComponent<Animator>();
         nav_Mesh_Agent=GetComponent<NavMeshAgent>();
+        enemy_Audio=GetComponent<EnemyAudioManager>();
     }
     rb=GetComponent<Rigidbody>();
 }
@@ -63,18 +67,26 @@ void CharacterDead()
         //below two lines are to disable rigidbody 
         rb.isKinematic=true;
         rb.detectCollisions=false;
+        StartCoroutine("PlayEnemyDeadClip");
         Invoke("DestroyEnemyObject",destroy_After);
     }
 
 
     else
     {
+        crosshair.SetActive(false);
         GetComponent<CharacterController>().enabled=false;
         GetComponent<PlayerMovementController>().enabled=false;
         GetComponent<PlayerAttack>().enabled=false;
         GetComponent<WeaponManager>().ReturnCurrentWeapon().gameObject.SetActive(false);
         Invoke("ResetGame",invoke_After);
     }
+}
+
+IEnumerator PlayEnemyDeadClip()
+{
+    yield return new WaitForSeconds(0.3f);
+    enemy_Audio.PlayDeadClip();
 }
 
 void DestroyEnemyObject()

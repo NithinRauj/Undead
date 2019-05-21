@@ -433,6 +433,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 139.94, y: -30, z: 0}
+--- !u!114 &1345024321 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114825971581877310, guid: bf0b3535edf926141abc27514f01700b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1604857164}
+  m_Script: {fileID: 11500000, guid: d6fab979bd6040f4eb10e6dcbb88ab44, type: 3}
 --- !u!1 &1406891790
 GameObject:
   m_ObjectHideFlags: 0
@@ -539,6 +545,16 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 224136021}
+    - target: {fileID: 114642140716937596, guid: bf0b3535edf926141abc27514f01700b,
+        type: 2}
+      propertyPath: enemy_Audio
+      value: 
+      objectReference: {fileID: 1345024321}
+    - target: {fileID: 114589935323953594, guid: bf0b3535edf926141abc27514f01700b,
+        type: 2}
+      propertyPath: enemy_Audio
+      value: 
+      objectReference: {fileID: 1345024321}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bf0b3535edf926141abc27514f01700b, type: 2}
   m_IsPrefabParent: 0
