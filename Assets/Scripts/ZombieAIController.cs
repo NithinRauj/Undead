@@ -6,21 +6,27 @@ using UnityEngine.AI;
 public class ZombieAIController : MonoBehaviour {
 
 private NavMeshAgent agent;
-[SerializeField]
 private Transform player;
 private Animator anim;
 private float visible_Distance=30f;
 private float destroy_After=3f;
 private HealthStatus health_Status;
 public GameObject attack_Point;
+private float min_Speed=4f;
+private float max_Speed=5.5f;
 
 
 void Awake()
 {
     agent=GetComponent<NavMeshAgent>();
     anim=GetComponent<Animator>();
+    player=GameObject.FindGameObjectWithTag(Tags.PLAYER_TAG).transform;
 }
 
+void Start()
+{
+    agent.speed=Random.Range(min_Speed,max_Speed);
+}
 
 void Update()
 {

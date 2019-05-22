@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour {
 
 	private WeaponManager weapon_Manager;
-    private float rateOfFire=15f;
+    public float rateOfFire=15f;
     private float nextTimeToFire;
     public float range=20f;
     public float damage=20f;
