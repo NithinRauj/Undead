@@ -5,10 +5,17 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour {
 
 	private WeaponManager weapon_Manager;
-    public float rateOfFire=15f;
+    public float rateOfFire=10f;
     private float nextTimeToFire;
     public float range=20f;
-    public float damage=20f;
+    private float damage;
+    public float damage_Shotgun=25f;
+    public float damage_Assault_Rifle=15f;
+    [SerializeField]
+    private int bullets_Assault_Rifle=6;
+    [SerializeField]
+    private int bullets_Shotgun=8;
+    private int bullets_current;
     private GameObject crosshair;
     [SerializeField]
     private Animator FPCamera_Anim;
@@ -17,8 +24,13 @@ public class PlayerAttack : MonoBehaviour {
     {
         weapon_Manager=GetComponent<WeaponManager>();
         crosshair=GameObject.FindGameObjectWithTag(Tags.CROSSHAIR);
-        // FPCamera_Anim=transform.Find(Tags.LOOK_ROOT).
-        //    transform.Find(Tags.ZOOM_CAMERA).GetComponent<Animator>();
+    }
+
+    void Start()
+    {
+        bullets_current=bullets_Assault_Rifle;
+        damage=damage_Assault_Rifle;
+        GetComponent<WeaponStats>().UpdateBulletsCount(bullets_Assault_Rifle);
     }
 
     void Update()
@@ -32,17 +44,35 @@ public class PlayerAttack : MonoBehaviour {
         //if current weapon is assault rifle
          if(weapon_Manager.ReturnCurrentWeapon().fire_Type==WeaponFireType.AUTOMATIC)
         {
-            if(Input.GetMouseButton(0) && Time.time>nextTimeToFire)
+            bullets_current=bullets_Assault_Rifle;
+            GetComponent<WeaponStats>().UpdateCurrentWeaponStats("Assault Rifle");
+            GetComponent<WeaponStats>().UpdateBulletsCount(bullets_Assault_Rifle);
+            damage=damage_Assault_Rifle;
+            if(Input.GetMouseButton(0) && Time.time>nextTimeToFire && bullets_current>0)
             {
                  nextTimeToFire=Time.time+1/rateOfFire;
                  weapon_Manager.ReturnCurrentWeapon().TriggerAttackAnimation();
                   BulletFired();
+                  bullets_Assault_Rifle--;
+                  GetComponent<WeaponStats>().UpdateBulletsCount(bullets_Assault_Rifle);
             }
         }
 
         //if current weapon has single fire mode
         else
         {
+             if(weapon_Manager.ReturnCurrentWeapon().tag==Tags.AXE_TAG)
+                {
+                    GetComponent<WeaponStats>().UpdateCurrentWeaponStats("Axe");
+                    GetComponent<WeaponStats>().UpdateBulletsCount();
+                }
+            else
+            {
+                bullets_current=bullets_Shotgun;
+                GetComponent<WeaponStats>().UpdateCurrentWeaponStats("Shotgun");
+                GetComponent<WeaponStats>().UpdateBulletsCount(bullets_Shotgun);
+                damage=damage_Shotgun;
+            }
             if(Input.GetMouseButtonDown(0))
             {
                 //if current weapon is axe
@@ -53,8 +83,13 @@ public class PlayerAttack : MonoBehaviour {
                 //if current weapon is shotgun
                 else
                 {
-                    weapon_Manager.ReturnCurrentWeapon().TriggerAttackAnimation();
-                    BulletFired();
+                    if(bullets_current>0)
+                    {
+                        weapon_Manager.ReturnCurrentWeapon().TriggerAttackAnimation();
+                        BulletFired();
+                        bullets_Shotgun--;
+                        GetComponent<WeaponStats>().UpdateBulletsCount(bullets_Shotgun);
+                    }
                 }
             }
         }
