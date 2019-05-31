@@ -39,16 +39,17 @@ void Update()
 
 void CursorLockAndUnlock()
 {
-    if(Input.GetKeyDown(KeyCode.Escape)){
-        if(Cursor.lockState==CursorLockMode.Locked)
-        {Cursor.lockState=CursorLockMode.None;}
+    
+        if(Input.GetKeyDown(KeyCode.Escape)){
+            if(Cursor.lockState==CursorLockMode.Locked)
+            {Cursor.lockState=CursorLockMode.None;}
 
-        else
-        {
-            Cursor.lockState=CursorLockMode.Locked;
-            Cursor.visible=false;
+            else
+            {
+                Cursor.lockState=CursorLockMode.Locked;
+                Cursor.visible=false;
+            }
         }
-    }
 }
 
 void LookAround()

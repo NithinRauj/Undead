@@ -18,6 +18,7 @@ private GameObject crosshair;
 private NavMeshAgent nav_Mesh_Agent;
 private EnemyAudioManager enemy_Audio;
 private PlayerStats player_Stats;
+public static int enemy_Count=2;
 	
 void Awake()
 {
@@ -74,6 +75,7 @@ void CharacterDead()
         rb.detectCollisions=false;
         StartCoroutine("PlayEnemyDeadClip");
         Invoke("DestroyEnemyObject",destroy_After);
+        enemy_Count--;
     }
 
 
@@ -84,7 +86,7 @@ void CharacterDead()
         GetComponent<PlayerMovementController>().enabled=false;
         GetComponent<PlayerAttack>().enabled=false;
         GetComponent<WeaponManager>().ReturnCurrentWeapon().gameObject.SetActive(false);
-        Invoke("ResetGame",invoke_After);
+        Invoke("DisplayMissionFailureScene",invoke_After);
     }
 }
 
@@ -99,8 +101,11 @@ void DestroyEnemyObject()
     Destroy(gameObject);
 }
 
-void ResetGame()
+void DisplayMissionFailureScene()
 {
-    UnityEngine.SceneManagement.SceneManager.LoadScene("Level");
+    Cursor.lockState=CursorLockMode.None;
+    Cursor.visible=true;
+    UnityEngine.SceneManagement.SceneManager.LoadScene("Mission Failed");
+    
 }
 }
