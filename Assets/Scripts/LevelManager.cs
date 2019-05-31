@@ -28,6 +28,7 @@ public void QuitGame()
 IEnumerator LoadSceneAsynchronously(int scene_Index)
 {
     AsyncOperation load_Operation=SceneManager.LoadSceneAsync(scene_Index);
+    Cursor.visible=false;
     loading_Screen.SetActive(true);
     while(!load_Operation.isDone)
     {
