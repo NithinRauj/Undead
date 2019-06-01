@@ -26,6 +26,7 @@ void Update()
     {
         LoadGameScene();
         intro_Screen.SetActive(false);
+        audio_Source.Stop();
         intro_Displayed=false;
     }
 }

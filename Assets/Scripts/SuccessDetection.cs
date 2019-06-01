@@ -9,7 +9,7 @@ void OnTriggerEnter(Collider player)
 {
     if(player.tag==Tags.PLAYER_TAG && HealthStatus.enemy_Count==0)
     {
-        HealthStatus.enemy_Count=2;
+        HealthStatus.enemy_Count=15;
         Invoke("DisplayMissionSuccess",invoke_After);
     }
 }

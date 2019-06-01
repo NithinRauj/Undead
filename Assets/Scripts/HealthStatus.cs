@@ -18,7 +18,7 @@ private GameObject crosshair;
 private NavMeshAgent nav_Mesh_Agent;
 private EnemyAudioManager enemy_Audio;
 private PlayerStats player_Stats;
-public static int enemy_Count=2;
+public static int enemy_Count=15;
 	
 void Awake()
 {
