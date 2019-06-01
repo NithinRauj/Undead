@@ -272,7 +272,7 @@ RectTransform:
   - {fileID: 71184438}
   - {fileID: 848380253}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -366,7 +366,7 @@ RectTransform:
   m_Children:
   - {fileID: 1670293983}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -403,7 +403,7 @@ Transform:
   - {fileID: 884728034}
   - {fileID: 1225314159}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &360049976
 GameObject:
@@ -512,7 +512,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4192716507745232, guid: 6140ea16d2686424d9ef85264bc6ef7c, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4037888766289826, guid: 6140ea16d2686424d9ef85264bc6ef7c, type: 2}
       propertyPath: m_LocalPosition.x
@@ -997,7 +997,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1501993825
 GameObject:
@@ -1106,7 +1106,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1508701423
 GameObject:
@@ -1289,7 +1289,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400012, guid: 2dabd7a53b5a97445b5a23887b4fc4ce, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 400012, guid: 2dabd7a53b5a97445b5a23887b4fc4ce, type: 3}
       propertyPath: m_LocalScale.x
@@ -1416,7 +1416,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4339500093326566, guid: 5e284aa9306071e4995a2e94f4af2514, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e284aa9306071e4995a2e94f4af2514, type: 2}
@@ -1458,7 +1458,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4096288498432194, guid: bf0b3535edf926141abc27514f01700b, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1418264048180234, guid: bf0b3535edf926141abc27514f01700b, type: 2}
       propertyPath: m_IsActive
@@ -1506,21 +1506,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 114218809058953624, guid: 34e35caf51917cb4f8473433246766e1,
-        type: 2}
-      propertyPath: crosshair
-      value: 
-      objectReference: {fileID: 1670293982}
-    - target: {fileID: 114938538756877476, guid: 34e35caf51917cb4f8473433246766e1,
-        type: 2}
-      propertyPath: health_Stats
-      value: 
-      objectReference: {fileID: 891533813}
-    - target: {fileID: 114938538756877476, guid: 34e35caf51917cb4f8473433246766e1,
-        type: 2}
-      propertyPath: stamina_Stats
-      value: 
-      objectReference: {fileID: 1834861213}
     - target: {fileID: 114631182476908532, guid: 34e35caf51917cb4f8473433246766e1,
         type: 2}
       propertyPath: bullets_Text
@@ -1531,6 +1516,21 @@ Prefab:
       propertyPath: current_Weapon_Text
       value: 
       objectReference: {fileID: 848380254}
+    - target: {fileID: 114938538756877476, guid: 34e35caf51917cb4f8473433246766e1,
+        type: 2}
+      propertyPath: health_Stats
+      value: 
+      objectReference: {fileID: 891533813}
+    - target: {fileID: 114938538756877476, guid: 34e35caf51917cb4f8473433246766e1,
+        type: 2}
+      propertyPath: stamina_Stats
+      value: 
+      objectReference: {fileID: 1834861213}
+    - target: {fileID: 114218809058953624, guid: 34e35caf51917cb4f8473433246766e1,
+        type: 2}
+      propertyPath: crosshair
+      value: 
+      objectReference: {fileID: 1670293982}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 34e35caf51917cb4f8473433246766e1, type: 2}
   m_IsPrefabParent: 0

@@ -1784,6 +1784,7 @@ GameObject:
   - component: {fileID: 20890797394125986}
   - component: {fileID: 124835701331755566}
   - component: {fileID: 81689705118812378}
+  - component: {fileID: 114901188065264774}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3813,7 +3814,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1979150866765492}
   m_LocalRotation: {x: -0, y: 0.9269431, z: -0, w: 0.37520206}
-  m_LocalPosition: {x: 578.92584, y: 201.83, z: 636.53}
+  m_LocalPosition: {x: 578.92584, y: 201.83, z: 626}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4034369179176858}
@@ -5503,7 +5504,7 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1.42
+  m_Intensity: 6
   m_Range: 50
   m_SpotAngle: 52
   m_CookieSize: 10
@@ -5736,6 +5737,18 @@ MonoBehaviour:
   bullet_Type: 0
   muzzle_Flash: {fileID: 1897539619335748}
   attack_Point: {fileID: 0}
+--- !u!114 &114901188065264774
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1692874997924344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 95fa16b152b896e4b887eb416214f62d, type: 2}
 --- !u!114 &114904690438573782
 MonoBehaviour:
   m_ObjectHideFlags: 1
