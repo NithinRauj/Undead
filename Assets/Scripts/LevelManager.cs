@@ -10,6 +10,26 @@ private int start_Scene_Index=0;
 private GameObject loading_Screen;
 [SerializeField]
 private UnityEngine.UI.Slider slider;
+[SerializeField]
+private GameObject intro_Screen;
+private bool intro_Displayed=false;
+private AudioSource audio_Source;
+
+void Awake()
+{
+    audio_Source=GetComponent<AudioSource>();    
+}
+
+void Update()
+{
+    if(Input.GetKeyDown(KeyCode.Return) && intro_Displayed)
+    {
+        LoadGameScene();
+        intro_Screen.SetActive(false);
+        intro_Displayed=false;
+    }
+}
+
 
 public void LoadStartScene()
 {
@@ -20,6 +40,12 @@ public void LoadGameScene()
     StartCoroutine(LoadSceneAsynchronously(game_Scene_Index));
 }
 
+public void DisplayIntro()
+{
+    intro_Screen.SetActive(true);
+    audio_Source.Play();
+    intro_Displayed=true;
+}
 public void QuitGame()
 {
     Application.Quit();
@@ -33,7 +59,6 @@ IEnumerator LoadSceneAsynchronously(int scene_Index)
     while(!load_Operation.isDone)
     {
         float progress=Mathf.Clamp01(load_Operation.progress/0.9f);
-        Debug.Log(progress);
         slider.value=progress;
         yield return null;
     }
